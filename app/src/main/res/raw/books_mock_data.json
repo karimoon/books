@@ -1,0 +1,870 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 612,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "aPqFDwAAQBAJ",
+      "etag": "+NHxQmljFAg",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/aPqFDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Mes menus pour bébé en batch cooking",
+        "authors": [
+          "Collectif"
+        ],
+        "publisher": "Marabout",
+        "publishedDate": "2019-02-13",
+        "description": "En fonction du temps libre dont on dispose le dimanche (1 heure, 1 h 30, 2 heures, ou 2 h30), préparez en avance de bons petits plats pour votre bébé. Vous aurez le choix parmi plusieurs dimanches pour préparer 5 plats prêts en kit, à assembler en moins de 10 minutes chaque soir de semaine. Chacune des dimanches est imaginé selon les mêmes règles : un timing pour la préparation, et maximum 10 minutes de prép la semaine, des ingrédients accessibles et qu'on trouve facilement partout, une sélection de recettes « populaires », des kits préparés puis congelés pour les idées de fin de semaine, une série d'instructions coordonnées pour faire les choses dans le bon ordre (pour ne pas se retrouver à devoir faire deux gestes de cuisine en même temps). 15 dimanches types donc au moins 75 idées recettes. Des pages « bullet » à photocopier d'organizeur de la semaine, des fiches mémo pour les grandes règles et les idées basiques à toujours avoir dans son placard, son congélateur.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9782501140461"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "250114046X"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 192,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=aPqFDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=aPqFDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "fr",
+        "previewLink": "http://books.google.fr/books?id=aPqFDwAAQBAJ&printsec=frontcover&dq=cooking&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=aPqFDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=aPqFDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 10.99,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 10.99,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=aPqFDwAAQBAJ&rdid=book-aPqFDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1.099E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 1.099E7,
+              "currencyCode": "EUR"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/Mes_menus_pour_b%C3%A9b%C3%A9_en_batch_cooking-sample-epub.acsm?id=aPqFDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/Mes_menus_pour_b%C3%A9b%C3%A9_en_batch_cooking-sample-pdf.acsm?id=aPqFDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=aPqFDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "En fonction du temps libre dont on dispose le dimanche (1 heure, 1 h 30, 2 heures, ou 2 h30), préparez en avance de bons petits plats pour votre bébé."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "xwOEDwAAQBAJ",
+      "etag": "H53AE48RI7c",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/xwOEDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Mes premiers pas en batch cooking",
+        "authors": [
+          "Keda Black"
+        ],
+        "publisher": "Marabout",
+        "publishedDate": "2018-09-05",
+        "description": "Le Batch cooking c'est la recette pour préparer et planifier sa semaine à l'avance. En fonction du temps libre dont on dispose le dimanche (1 heure, 1 h 30, 2 heures, ou 2 h30), vous aurez le choix parmi plusieurs dimanches pour préparer 5 plats prêts en kit, à assembler en moins de 10 minutes chaque soir de semaine. Chacune des dimanches est imaginé selon les mêmes règles : un timing pour la préparation, et maximum 10 minutes de prép la semaine, des ingrédients accessibles et qu'on trouve facilement partout, une sélection de recettes « populaires », des kits préparés puis congelés pour les idées de fin de semaine, une série d'instructions coordonnées pour faire les choses dans le bon ordre (pour ne pas se retrouver à devoir faire deux gestes de cuisine en même temps). 15 dimanches types donc au moins 75 idées recettes. Des pages « bullet » à photocopier d'organizeur de la semaine, des fiches mémo pour les grandes règles et les idées basiques à toujours avoir dans son placard, son congélateur.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9782501140478"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "2501140478"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 224,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.1.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xwOEDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=xwOEDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "fr",
+        "previewLink": "http://books.google.fr/books?id=xwOEDwAAQBAJ&printsec=frontcover&dq=cooking&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=xwOEDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=xwOEDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 10.99,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 10.99,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=xwOEDwAAQBAJ&rdid=book-xwOEDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1.099E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 1.099E7,
+              "currencyCode": "EUR"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/Mes_premiers_pas_en_batch_cooking-sample-epub.acsm?id=xwOEDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/Mes_premiers_pas_en_batch_cooking-sample-pdf.acsm?id=xwOEDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=xwOEDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Le Batch cooking c&#39;est la recette pour préparer et planifier sa semaine à l&#39;avance."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "YXg4DwAAQBAJ",
+      "etag": "OXkBEMMuP5s",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/YXg4DwAAQBAJ",
+      "volumeInfo": {
+        "title": "La révolution du batch cooking",
+        "authors": [
+          "Anne Loiseau"
+        ],
+        "publisher": "Larousse",
+        "publishedDate": "2017-08-30",
+        "description": "Comment préparer 5 diners pour la semaine en 1 dimanche ? Vous en rêvez ? Nous l'avons fait. Une fois dans la semaine préparez en grandes quantités des aliments de base que vous pourrez conserver et accommoder tout au long de la semaine grâce à nos recettes ! Pourquoi adopter le batch cooking ? • Pour gagner du temps • Pour faire des économies • Pour manger sainement Découvrez comment, avec un peu d’organisation, vous allez révolutionner votre façon de cuisiner !",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9782035945181"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "2035945186"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 164,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=YXg4DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=YXg4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "fr",
+        "previewLink": "http://books.google.fr/books?id=YXg4DwAAQBAJ&printsec=frontcover&dq=cooking&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=YXg4DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=YXg4DwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 8.99,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 8.99,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=YXg4DwAAQBAJ&rdid=book-YXg4DwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 8990000.0,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 8990000.0,
+              "currencyCode": "EUR"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/La_r%C3%A9volution_du_batch_cooking-sample-epub.acsm?id=YXg4DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/La_r%C3%A9volution_du_batch_cooking-sample-pdf.acsm?id=YXg4DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=YXg4DwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Comment préparer 5 diners pour la semaine en 1 dimanche ?"
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "RwBr1QssYNEC",
+      "etag": "YtI43054t9Q",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/RwBr1QssYNEC",
+      "volumeInfo": {
+        "title": "Extrusion Cooking",
+        "subtitle": "A French-English-German Vocabulary",
+        "authors": [
+          "Annik Bouroche",
+          "Michèle Le Bars"
+        ],
+        "publisher": "Editions Quae",
+        "publishedDate": "1996",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9782738006301"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "2738006302"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 95,
+        "printType": "BOOK",
+        "categories": [
+          "Food industry and trade"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=RwBr1QssYNEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=RwBr1QssYNEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "fr",
+        "previewLink": "http://books.google.fr/books?id=RwBr1QssYNEC&pg=PA74&dq=cooking&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.fr/books?id=RwBr1QssYNEC&dq=cooking&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Extrusion_Cooking.html?hl=&id=RwBr1QssYNEC"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=RwBr1QssYNEC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "SCHULER E.W. (1986) — Twin-screw extrusion \u003cb\u003ecooking\u003c/b\u003e Systems for food \u003cbr\u003e\nprocessing. Cereal Foods World, vol. 31, n° 6, p. 413-416. SMITH A. (1989) — \u003cbr\u003e\nExtrusion \u003cb\u003ecooking\u003c/b\u003e: a review. Food Science and Technology Today, vol. 3 (3), p. \u003cbr\u003e\n156-161."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "8OmRDwAAQBAJ",
+      "etag": "AY3QO33KKDA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/8OmRDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Mon atelier Batch Cooking – Menus pour ma tribu",
+        "authors": [
+          "Emilie LARAISON"
+        ],
+        "publisher": "First",
+        "publishedDate": "2019-05-02",
+        "description": "Toute une semaine préparée à l'avance ou en kit le week-end ! Des idées ni trop veggie, ni trop légères, des menus équilibrés sur toute la semaine pour rassasier toute sa tribu. Préparez le dimanche, profitez la semaine ! Après des journées actives et bien remplies, vous n'avez jamais le temps ni l'envie de cuisiner ? Vous manquez d'idées pour satisfaire toute votre tribu ? Mettez-vous au batch cooking en cuisinant à l'avance ! Découvrez dans ce livre 15 semaines de menus familiaux et gourmands, conçus pour 4 personnes, à préparer en 1 heure à 2 heures le dimanche. Les soirs de semaine, vous n'aurez plus qu'à assembler et réchauffer ; en 15 minutes, c'est prêt ! Au programme : - 15 menus avec des produits accessibles, qui plaisent à tous - Une préparation du dimanche et des listes de courses optimisées pour gagner du temps - 75 recettes testées et approuvées par petits et grands - Pas plus de 15 minutes en cuisine chaque soir de semaine - Des conseils pour bien conserver ses aliments, recycler les restes et s'organiser simplement Ce livre va devenir votre meilleur allié pour déguster des petits plats maison, économiser et profiter enfin de vos soirées en famille !",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9782412047392"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "2412047391"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 208,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=8OmRDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=8OmRDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "fr",
+        "previewLink": "http://books.google.fr/books?id=8OmRDwAAQBAJ&pg=PA5&dq=cooking&hl=&cd=5&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=8OmRDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=8OmRDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 15.99,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 15.99,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=8OmRDwAAQBAJ&rdid=book-8OmRDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1.599E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 1.599E7,
+              "currencyCode": "EUR"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=8OmRDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Cette méthode, appelée batch \u003cb\u003ecooking\u003c/b\u003e, nous vient d&#39;OutreAtlantique et désigne l&#39;\u003cbr\u003e\nacte de cuisiner (\u003cb\u003ecooking\u003c/b\u003e) à l&#39;avance en réalisant des lots (batch) de recettes. Sa \u003cbr\u003e\nprincipale vertu est de réconcilier subtilement anticipation et bonheur de&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "bKVCtH4AjwgC",
+      "etag": "aVaqUCt4gzA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/bKVCtH4AjwgC",
+      "volumeInfo": {
+        "title": "On Food and Cooking",
+        "subtitle": "The Science and Lore of the Kitchen",
+        "authors": [
+          "Harold McGee"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2007-03-20",
+        "description": "Harold McGee's On Food and Cooking is a kitchen classic. Hailed by Time magazine as \"a minor masterpiece\" when it first appeared in 1984, On Food and Cooking is the bible to which food lovers and professional chefs worldwide turn for an understanding of where our foods come from, what exactly they're made of, and how cooking transforms them into something new and delicious. Now, for its twentieth anniversary, Harold McGee has prepared a new, fully revised and updated edition of On Food and Cooking. He has rewritten the text almost completely, expanded it by two-thirds, and commissioned more than 100 new illustrations. As compulsively readable and engaging as ever, the new On Food and Cooking provides countless eye-opening insights into food, its preparation, and its enjoyment. On Food and Cooking pioneered the translation of technical food science into cook-friendly kitchen science and helped give birth to the inventive culinary movement known as \"molecular gastronomy.\" Though other books have now been written about kitchen science, On Food and Cooking remains unmatched in the accuracy, clarity, and thoroughness of its explanations, and the intriguing way in which it blends science with the historical evolution of foods and cooking techniques. Among the major themes addressed throughout this new edition are: Traditional and modern methods of food production and their influences on food quality The great diversity of methods by which people in different places and times have prepared the same ingredients Tips for selecting the best ingredients and preparing them successfully The particular substances that give foods their flavors and that give us pleasure Our evolving knowledge of the health benefits and risks of foods On Food and Cooking is an invaluable and monumental compendium of basic information about ingredients, cooking methods, and the pleasures of eating. It will delight and fascinate anyone who has ever cooked, savored, or wondered about food.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1416556370"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781416556374"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 896,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 51,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.12.9.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=bKVCtH4AjwgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=bKVCtH4AjwgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.fr/books?id=bKVCtH4AjwgC&printsec=frontcover&dq=cooking&hl=&cd=6&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=bKVCtH4AjwgC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=bKVCtH4AjwgC"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 18.79,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 18.79,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=bKVCtH4AjwgC&rdid=book-bKVCtH4AjwgC&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1.879E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 1.879E7,
+              "currencyCode": "EUR"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/On_Food_and_Cooking-sample-epub.acsm?id=bKVCtH4AjwgC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=bKVCtH4AjwgC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Among the major themes addressed throughout this new edition are: Traditional and modern methods of food production and their influences on food quality The great diversity of methods by which people in different places and times have ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "TcQvQL0jH7sC",
+      "etag": "SAKRDxqVm/A",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/TcQvQL0jH7sC",
+      "volumeInfo": {
+        "title": "Just Cooking Coppens - Editi",
+        "publisher": "Lannoo Uitgeverij",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "9020968068"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9789020968064"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "printType": "BOOK",
+        "averageRating": 5.0,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.0.1.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=TcQvQL0jH7sC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=TcQvQL0jH7sC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "fr",
+        "previewLink": "http://books.google.fr/books?id=TcQvQL0jH7sC&pg=PA87&dq=cooking&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.fr/books?id=TcQvQL0jH7sC&dq=cooking&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Just_Cooking_Coppens_Editi.html?hl=&id=TcQvQL0jH7sC"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=TcQvQL0jH7sC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "C4_5MCUd6ucC",
+      "etag": "+sFeJn6Z+TU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/C4_5MCUd6ucC",
+      "volumeInfo": {
+        "title": "Joy of Cooking",
+        "authors": [
+          "Irma S. Rombauer",
+          "Marion Rombauer Becker"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "1975",
+        "description": "Detailed information on foods and cooking techniques accompany fundamental recipes for hors d'oeuvres, soups, salads, main dishes, side dishes, breads, pies, cookies, candies, and desserts",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780026045704"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0026045702"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 915,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 27,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.1.0.preview.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=C4_5MCUd6ucC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=C4_5MCUd6ucC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.fr/books?id=C4_5MCUd6ucC&printsec=frontcover&dq=cooking&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.fr/books?id=C4_5MCUd6ucC&dq=cooking&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Joy_of_Cooking.html?hl=&id=C4_5MCUd6ucC"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=C4_5MCUd6ucC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Detailed information on foods and cooking techniques accompany fundamental recipes for hors d&#39;oeuvres, soups, salads, main dishes, side dishes, breads, pies, cookies, candies, and desserts"
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "IciBQN-0VS4C",
+      "etag": "Jl56ClThhQs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/IciBQN-0VS4C",
+      "volumeInfo": {
+        "title": "The Essentials of Classic Italian Cooking",
+        "authors": [
+          "Marcella Hazan"
+        ],
+        "publisher": "Pan Macmillan",
+        "publishedDate": "2012-01-26",
+        "description": "'If this were the only cookbook you owned, neither you nor those you cooked for would ever get bored.’ Nigella Lawson Marcella Hazan is widely regarded as one of the greatest Italian cookery writers in the world and The Essentials of Classic Italian Cooking is her masterpiece. Aimed at cooks of every level, be they beginners or accomplished chefs, it is an accessible and comprehensive guide to authentic Italian cuisine and should find a place in the kitchen library of anyone who is passionate about good food. Featuring hundreds of recipes ranging from soups, pastas and risottos, to delicious meat and vegetable dishes, The Essentials of Classic Italian Cooking is an indispensable addition to any kitchen.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780752228044"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0752228048"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 736,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.2.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=IciBQN-0VS4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=IciBQN-0VS4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.fr/books?id=IciBQN-0VS4C&pg=PP11&dq=cooking&hl=&cd=9&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=IciBQN-0VS4C&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=IciBQN-0VS4C"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 28.13,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 19.99,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=IciBQN-0VS4C&rdid=book-IciBQN-0VS4C&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 2.813E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 1.999E7,
+              "currencyCode": "EUR"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/The_Essentials_of_Classic_Italian_Cookin-sample-epub.acsm?id=IciBQN-0VS4C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=IciBQN-0VS4C&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "But then, who could have expected them to journey as far as they have, \u003cbr\u003e\nbecoming for so many people, in so many countries of the English-speaking \u003cbr\u003e\nworld, a familiar reference to Italian \u003cb\u003ecooking\u003c/b\u003e? As volumes I and II, to use our \u003cbr\u003e\nworking names&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "fJ_JDp9OgJEC",
+      "etag": "zV1s2b+7+4E",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/fJ_JDp9OgJEC",
+      "volumeInfo": {
+        "title": "Food and Cooking in Victorian England",
+        "subtitle": "A History",
+        "authors": [
+          "Andrea Broomfield"
+        ],
+        "publisher": "Greenwood Publishing Group",
+        "publishedDate": "2007",
+        "description": "Provides a history of food and cooking in Victorian England, explaining how recipes reflected their writers' socioeconomic status, detailing the evolution of breakfast and lunch, and tracing the snob appeal of foods with French names.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0275987086"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780275987084"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 201,
+        "printType": "BOOK",
+        "categories": [
+          "Cooking"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=fJ_JDp9OgJEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=fJ_JDp9OgJEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.fr/books?id=fJ_JDp9OgJEC&printsec=frontcover&dq=cooking&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.fr/books?id=fJ_JDp9OgJEC&dq=cooking&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Food_and_Cooking_in_Victorian_England.html?hl=&id=fJ_JDp9OgJEC"
+      },
+      "saleInfo": {
+        "country": "FR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "FR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/Food_and_Cooking_in_Victorian_England-sample-epub.acsm?id=fJ_JDp9OgJEC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.fr/books/download/Food_and_Cooking_in_Victorian_England-sample-pdf.acsm?id=fJ_JDp9OgJEC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=fJ_JDp9OgJEC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Provides a history of food and cooking in Victorian England, explaining how recipes reflected their writers&#39; socioeconomic status, detailing the evolution of breakfast and lunch, and tracing the snob appeal of foods with French names."
+      }
+    }
+  ]
+}
