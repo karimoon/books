@@ -7,4 +7,4 @@ the application works in two modes:
 
 -> offline mode: the application allows you to display in this case the last list retrieved in online mode.
 
-In this project I've used kotlin, MVVM, livedata, Room, Files, SharedPreferences, Coroutines, Retrofite, Glide, DataBinding, Androidx, Navigation Component Dagger 2 and unit tests.
+In this project I've used kotlin, MVVM, livedata, Room, Files, SharedPreferences, Coroutines, Retrofite, Glide, DataBinding, Androidx, Navigation Component, Dagger 2 and unit tests.
