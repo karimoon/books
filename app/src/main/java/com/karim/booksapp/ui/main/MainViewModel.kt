@@ -4,47 +4,50 @@ package com.karim.booksapp.ui.main
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.karim.booksapp.data.repository.BookRepository
+import javax.inject.Inject
 
+class MainViewModel
+@Inject
+constructor(val app : Application, val bookRepository: BookRepository) : AndroidViewModel(app)
 
-class MainViewModel(app: Application) : AndroidViewModel(app) {
+{
 
-    val dataRepo = BookRepository(app)
+    val bookData = bookRepository.bookData
 
-    val bookData = dataRepo.bookData
+    val favoriteBooksData = bookRepository.favoriteBooksData
 
-    val favoriteBooksData = dataRepo.favoriteBooksData
+    val queryMapSelected = bookRepository.queryMapSelected
 
-    val queryMapSelected = dataRepo.queryMapSelected
+    val isNetworkAvailable = bookRepository.isNetworkAvailable
 
-    val isNetworkAvailable = dataRepo.isNetworkAvailable
 
     fun refreshData(mSortBy: String) {
-        dataRepo.refreshDataFromWeb(mSortBy)
+        bookRepository.refreshDataFromWeb(mSortBy)
     }
 
     fun searchBooksWithQueryWithPagination(queryMap : HashMap<String,String>){
-        dataRepo.searchBooksWithQueryFromWebWithPagination(queryMap)
+        bookRepository.searchBooksWithQueryFromWebWithPagination(queryMap)
     }
 
     fun getFavoriteBooks(){
-        dataRepo.getFavoriteBooks()
+        bookRepository.getFavoriteBooks()
     }
 
     fun searchBooksWithQuery(queryMap : HashMap<String,String>){
-        dataRepo.searchBooksWithQueryFromWeb(queryMap)
+        bookRepository.searchBooksWithQueryFromWeb(queryMap)
     }
 
     fun displayBooksFromCache(){
-        dataRepo.displayBooksFromCache()
+        bookRepository.displayBooksFromCache()
     }
 
     fun configSearchWithDefaultParams(query : String): HashMap<String, String> {
 
-        return dataRepo.configSearchWithDefaultParams(query)
+        return bookRepository.configSearchWithDefaultParams(query)
     }
 
     fun isNetworkAvailable(): Boolean {
-        return dataRepo.networkAvalable()
+        return bookRepository.networkAvalable()
     }
 
 

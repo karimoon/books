@@ -1,5 +1,6 @@
 package com.karim.booksapp.ui.main
 
+import Injectable
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuItemCompat
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -23,16 +26,20 @@ import com.karim.booksapp.data.models.Book
 import com.karim.booksapp.ui.MainActivity
 import com.karim.booksapp.ui.detail.DetailBookActivity
 import com.karim.booksapp.utilities.SpUtil
+import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_book_list.*
+import javax.inject.Inject
 
-class BookListFragment : Fragment() , BooksListRecyclerAdapter.BookItemListener ,  SearchView.OnQueryTextListener {
+class BookListFragment : DaggerFragment()  , BooksListRecyclerAdapter.BookItemListener ,  SearchView.OnQueryTextListener  {
 
     private lateinit var viewModel: MainViewModel
-    private lateinit var recyclerView: RecyclerView
     private lateinit var mSearchView: SearchView
-    private lateinit var swipeLayout: SwipeRefreshLayout
     private lateinit var navController: NavController
     private var counterPage = 0
     private var mSortBy = "relevance"
+
+    @Inject
+    lateinit var providerFactory: ViewModelProvider.Factory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,17 +64,24 @@ class BookListFragment : Fragment() , BooksListRecyclerAdapter.BookItemListener 
 
         val view = inflater.inflate(R.layout.fragment_book_list, container, false)
 
-        recyclerView = view.findViewById(R.id.rv_books)
-
-
-        swipeLayout = view.findViewById(R.id.swipeLayout)
-
         navController = Navigation.findNavController(
             requireActivity(), R.id.nav_host
         )
         if (savedInstanceState != null){
             mSortBy = savedInstanceState.getString(EXTRA_SORT_BY).toString()
         }
+
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        Log.d(LOG_TAG, "providerString-->" + providerFactory)
+
+        viewModel = ViewModelProviders.of(requireActivity(),providerFactory).get(MainViewModel::class.java)
+        //viewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel::class.java)
 
         swipeLayout.isRefreshing=true
 
@@ -89,36 +103,34 @@ class BookListFragment : Fragment() , BooksListRecyclerAdapter.BookItemListener 
             }
         }
 
-        viewModel=(activity as MainActivity).viewModel
 
-            viewModel.favoriteBooksData.observe(this , Observer {
+        viewModel.favoriteBooksData.observe(this , Observer {
+            val booksListRecyclerAdapter = BooksListRecyclerAdapter(requireContext(), it , this )
+            rv_books.adapter = booksListRecyclerAdapter
+            swipeLayout.isRefreshing=false
+        })
+
+        viewModel.queryMapSelected.removeObservers(viewLifecycleOwner)
+
+        viewModel.queryMapSelected.observe(this, Observer {
+            if(it["startIndex"]==null){
+                viewModel.searchBooksWithQuery(it)
+            }
+        })
+
+        viewModel.bookData.observe(viewLifecycleOwner, Observer {
+
+            if(it.size > MAX_RESULTS){
+                rv_books.adapter?.notifyItemRangeChanged(0, rv_books.adapter!!.getItemCount())
+                if (rv_books.adapter == null) {
+                    rv_books.adapter = rv_books.adapter?:BooksListRecyclerAdapter(requireContext(), it , this )                }
+            }
+            else{
                 val booksListRecyclerAdapter = BooksListRecyclerAdapter(requireContext(), it , this )
-                recyclerView.adapter = booksListRecyclerAdapter
-                swipeLayout.isRefreshing=false
-            })
-
-
-            viewModel.queryMapSelected.observe(this, Observer {
-                if(it["startIndex"]==null){
-                    viewModel.searchBooksWithQuery(it)
-                }
-            })
-
-            viewModel.bookData.observe(viewLifecycleOwner, Observer {
-
-                if(it.size > MAX_RESULTS){
-                    recyclerView.adapter?.notifyItemRangeChanged(0, recyclerView.adapter!!.getItemCount())
-                    if (recyclerView.adapter == null) {
-                        recyclerView.adapter = recyclerView.adapter?:BooksListRecyclerAdapter(requireContext(), it , this )                }
-                }
-                else{
-                    val booksListRecyclerAdapter = BooksListRecyclerAdapter(requireContext(), it , this )
-                    recyclerView.adapter = booksListRecyclerAdapter
-                }
-                swipeLayout.isRefreshing=false
-            })
-
-        return view
+                rv_books.adapter = booksListRecyclerAdapter
+            }
+            swipeLayout.isRefreshing=false
+        })
     }
 
 
@@ -181,7 +193,7 @@ class BookListFragment : Fragment() , BooksListRecyclerAdapter.BookItemListener 
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         swipeLayout.isRefreshing=true
-        recyclerView.adapter?.let {
+        rv_books.adapter?.let {
             (it as BooksListRecyclerAdapter).clear()
         }
 
@@ -203,7 +215,7 @@ class BookListFragment : Fragment() , BooksListRecyclerAdapter.BookItemListener 
 
     private fun initRecyclerView() {
 
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        rv_books.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
 

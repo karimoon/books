@@ -10,6 +10,7 @@ import androidx.annotation.WorkerThread
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import com.karim.booksapp.*
+import com.karim.booksapp.data.database.BookDao
 import com.karim.booksapp.data.models.Book
 import com.karim.booksapp.data.database.BookDatabase
 import com.karim.booksapp.data.retrofit.BookRetrofitService
@@ -25,17 +26,19 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Inject
 
-class BookRepository(val app :Application) {
+class BookRepository
+@Inject
+constructor(val app :Application , val bookRetrofitService: BookRetrofitService,
+            val bookDao : BookDao
+) {
 
     val isNetworkAvailable = MutableLiveData<Boolean>()
     val bookData = MutableLiveData<List<Book>>()
     val favoriteBooksData = MutableLiveData<List<Book>>()
 
     val queryMapSelected = MutableLiveData<HashMap<String,String>>()
-
-    private val bookDao = BookDatabase.getDatabase(app)
-        .bookDao()
 
 
     fun getBooksFromJsonFile() {
@@ -51,13 +54,10 @@ class BookRepository(val app :Application) {
     suspend fun searchBooksFromWeb(query: HashMap<String,String>){
 
         if(networkAvalable()){
-            val retrofit = Retrofit.Builder()
-                .baseUrl(API_URL)
-                .addConverterFactory(MoshiConverterFactory.create())
-                .build()
 
-            val service = retrofit.create(BookRetrofitService::class.java)
-            val serviceData = service.getBooksDataParams(query).body()?: BooksEntry()
+            val serviceData = bookRetrofitService.getBooksDataParams(query).body()?: BooksEntry()
+
+
             val books = ParserUtil.getBooksFromBooksEntry(serviceData)
 
             bookData.postValue(books)
@@ -71,16 +71,11 @@ class BookRepository(val app :Application) {
 
         if(networkAvalable()){
             Log.i(LOG_TAG, "Calling web service")
-            val retrofit = Retrofit.Builder()
-                .baseUrl(API_URL)
-                .addConverterFactory(MoshiConverterFactory.create())
-                .build()
 
-            val service = retrofit.create(BookRetrofitService::class.java)
-            val serviceData = service.getBooksDataParams(query).body()?: BooksEntry()
+            val serviceData = bookRetrofitService.getBooksDataParams(query).body()?: BooksEntry()
             val books = ParserUtil.getBooksFromBooksEntry(serviceData)
 
-            val actualBooks =(bookData.value?: ArrayList())as ArrayList
+            val actualBooks =(bookData.value?: emptyList())as ArrayList
 
             actualBooks.addAll(books)
 

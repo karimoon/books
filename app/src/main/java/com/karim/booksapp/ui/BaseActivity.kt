@@ -8,9 +8,11 @@ import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.karim.booksapp.R
 import com.karim.booksapp.data.recievers.ConnectivityReceiver
+import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.disposables.Disposable
+import kotlinx.android.synthetic.main.main_activity.*
 
-open class BaseActivity : AppCompatActivity() {
+open class BaseActivity : DaggerAppCompatActivity() {
 
     private var snackBar: Snackbar? = null
 
@@ -23,7 +25,7 @@ open class BaseActivity : AppCompatActivity() {
 
     fun showNetworkMessage(isConnected: Boolean) {
         if (!isConnected) {
-            snackBar = Snackbar.make(findViewById(R.id.container), "You are offline", Snackbar.LENGTH_LONG)
+            snackBar = Snackbar.make(container, "You are offline", Snackbar.LENGTH_LONG)
             snackBar?.duration = BaseTransientBottomBar.LENGTH_INDEFINITE
             snackBar?.show()
         } else {

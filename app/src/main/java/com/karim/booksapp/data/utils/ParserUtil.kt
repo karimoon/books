@@ -87,29 +87,29 @@ class ParserUtil{
             try {
                 //val jsonBooks = JSONObject(json)
                 val arrayBooks = booksEntry.items
-                val numberOfBooks = arrayBooks.size
+                val numberOfBooks = arrayBooks!!.size
                 for (i in 0 until numberOfBooks) {
                     val bookJSON = arrayBooks.get(i)
                     val volumeInfoJSON = bookJSON.volumeInfo
                     var imageLinksJSON: ImageLinks =
                         ImageLinks()
-                    if (volumeInfoJSON.imageLinks != null) {
-                        imageLinksJSON = volumeInfoJSON.imageLinks
+                    if (volumeInfoJSON!!.imageLinks != null) {
+                        imageLinksJSON = volumeInfoJSON!!.imageLinks!!
                     }
                     var authorNum: Int
                     try {
-                        authorNum = volumeInfoJSON.authors.size
+                        authorNum = volumeInfoJSON.authors!!.size
                     } catch (e: Exception) {
                         authorNum = 0
                     }
 
                     val authors = arrayOfNulls<String>(authorNum)
                     for (j in 0 until authorNum) {
-                        authors[j] = volumeInfoJSON.authors.get(j).toString()
+                        authors[j] = volumeInfoJSON.authors!!.get(j).toString()
                     }
                     val book = Book(
-                        bookJSON.id,
-                        volumeInfoJSON.title,
+                        bookJSON.id!!,
+                        volumeInfoJSON.title!!,
                         volumeInfoJSON.subtitle ?: ""
                         ,
                         authors,

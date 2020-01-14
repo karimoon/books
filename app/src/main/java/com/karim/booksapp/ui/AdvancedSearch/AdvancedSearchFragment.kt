@@ -53,7 +53,9 @@ class AdvancedSearchFragment : Fragment() {
             requireActivity(), R.id.nav_host
         )
 
-        viewModel=(activity as MainActivity).viewModel
+        //viewModel=(activity as MainActivity).viewModel
+
+        viewModel=ViewModelProviders.of(requireActivity()).get(MainViewModel::class.java)
 
         button.setOnClickListener { view ->
             run {

@@ -20,6 +20,9 @@ import com.karim.booksapp.ui.MainActivity
 
 import com.karim.booksapp.ui.main.MainViewModel
 import com.karim.booksapp.utilities.SpUtil
+import kotlinx.android.synthetic.main.fragment_search.*
+import javax.inject.Inject
+
 
 /**
  * A simple [Fragment] subclass.
@@ -28,12 +31,10 @@ class SearchFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
 
-    private lateinit var searchEditText: EditText
-
-    private lateinit var advancedTextView : TextView
-
-    private lateinit var searchButton: Button
     private lateinit var navController: NavController
+
+//    @Inject
+//    lateinit var providerFactory : ViewModelProviderFactory
 
 
     override fun onResume() {
@@ -49,26 +50,12 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_search, container, false)
 
-        searchEditText = view.findViewById(R.id.searchEditText)
-        searchButton = view.findViewById(R.id.searchButton)
-        advancedTextView = view.findViewById(R.id.advancedTextView)
 
         navController = Navigation.findNavController(
             requireActivity(), R.id.nav_host
         )
 
-        viewModel=(activity as MainActivity).viewModel
-
-        searchButton.setOnClickListener {
-                view ->
-            if(!searchEditText.text.isNullOrBlank()){
-                searchBooks(searchEditText.text.toString())
-        }
-        }
-
-        advancedTextView.setOnClickListener({
-                view ->  avdancedSearch()
-        })
+        viewModel=ViewModelProviders.of(requireActivity()).get(MainViewModel::class.java)
 
 
         if(!viewModel.isNetworkAvailable()){
@@ -77,6 +64,21 @@ class SearchFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        searchButton.setOnClickListener {
+                view ->
+            if(!searchEditText.text.isNullOrBlank()){
+                searchBooks(searchEditText.text.toString())
+            }
+        }
+
+        advancedTextView.setOnClickListener({
+                view ->  avdancedSearch()
+        })
     }
 
     private fun avdancedSearch() {

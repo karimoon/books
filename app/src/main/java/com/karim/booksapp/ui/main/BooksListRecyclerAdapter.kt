@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.karim.booksapp.R
 import com.karim.booksapp.data.models.Book
+import kotlinx.android.synthetic.main.book_grid_item.view.*
 
 class BooksListRecyclerAdapter(val context: Context,
                                var books: List<Book>, val itemListener: BookItemListener):
@@ -64,9 +65,9 @@ class BooksListRecyclerAdapter(val context: Context,
 
     inner class ViewHolder(itemView: View) :
             RecyclerView.ViewHolder(itemView) {
-        val nameText = itemView.findViewById<TextView>(R.id.nameText)
-        val bookImage = itemView.findViewById<ImageView>(R.id.bookImage)
-        val ratingBar = itemView.findViewById<RatingBar>(R.id.ratingBar)
+        val nameText = itemView.nameText
+        val bookImage = itemView.bookImage
+        val ratingBar = itemView.ratingBar
     }
 
     interface BookItemListener {

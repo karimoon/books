@@ -17,6 +17,7 @@ import com.karim.booksapp.data.models.Book
 import com.karim.booksapp.data.recievers.ConnectivityReceiver
 import com.karim.booksapp.databinding.ActivityDetailBookBinding
 import com.karim.booksapp.ui.BaseActivity
+import kotlinx.android.synthetic.main.favorite_buttons.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -26,12 +27,9 @@ import kotlinx.coroutines.withContext
 class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
 
 
-    private lateinit var mButtonMarkAsFavorite: Button
-    private lateinit var mButtonRemoveFromFavorites: Button
-
     var isRegistered = false
 
-    private lateinit var book : Book
+    private  var book : Book? = null
 
     val reciever = ConnectivityReceiver()
 
@@ -43,8 +41,6 @@ class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityRece
 
         val binding: ActivityDetailBookBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail_book)
 
-        mButtonMarkAsFavorite = findViewById(R.id.button_mark_as_favorite)
-        mButtonRemoveFromFavorites = findViewById(R.id.button_remove_from_favorites)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -56,23 +52,23 @@ class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityRece
 
     suspend fun updateFavoriteButtons() {
 
-        mButtonMarkAsFavorite.setOnClickListener { view ->
+        button_mark_as_favorite.setOnClickListener { view ->
             CoroutineScope(Dispatchers.IO).launch{markAsFavorite()}
             }
 
-        mButtonRemoveFromFavorites.setOnClickListener { view ->  CoroutineScope(Dispatchers.IO).launch{removeFromFavorites()}}
+        button_remove_from_favorites.setOnClickListener { view ->  CoroutineScope(Dispatchers.IO).launch{removeFromFavorites()}}
 
         val isFavorite = isFavorite()
         if(isFavorite){
             withContext(Main){
-                mButtonRemoveFromFavorites.setVisibility(View.VISIBLE)
-                mButtonMarkAsFavorite.setVisibility(View.GONE)
+                button_remove_from_favorites.setVisibility(View.VISIBLE)
+                button_mark_as_favorite.setVisibility(View.GONE)
             }
         }
         else{
             withContext(Main){
-                mButtonMarkAsFavorite.setVisibility(View.VISIBLE)
-                mButtonRemoveFromFavorites.setVisibility(View.GONE)
+                button_mark_as_favorite.setVisibility(View.VISIBLE)
+                button_remove_from_favorites.setVisibility(View.GONE)
             }
         }
     }
@@ -81,7 +77,7 @@ class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityRece
 
         val isFavorite = isFavorite()
         if(isFavorite){
-            bookDao.delete(book)
+            book?.let { bookDao.delete(it) }
         }
         updateFavoriteButtons()
     }
@@ -90,14 +86,14 @@ class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityRece
 
         val isFavorite = isFavorite()
         if(!isFavorite){
-            bookDao.insertBook(book)
+            book?.let { bookDao.insertBook(it) }
         }
         updateFavoriteButtons()
     }
 
      suspend fun isFavorite(): Boolean {
 
-         var  bookretrieved = bookDao.findBookById(book.id)
+         var  bookretrieved = book?.id?.let { bookDao.findBookById(it) }
          return bookretrieved != null
     }
 
