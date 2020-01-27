@@ -87,42 +87,46 @@ class ParserUtil{
             try {
                 //val jsonBooks = JSONObject(json)
                 val arrayBooks = booksEntry.items
-                val numberOfBooks = arrayBooks!!.size
-                for (i in 0 until numberOfBooks) {
-                    val bookJSON = arrayBooks.get(i)
-                    val volumeInfoJSON = bookJSON.volumeInfo
-                    var imageLinksJSON: ImageLinks =
-                        ImageLinks()
-                    if (volumeInfoJSON!!.imageLinks != null) {
-                        imageLinksJSON = volumeInfoJSON!!.imageLinks!!
-                    }
-                    var authorNum: Int
-                    try {
-                        authorNum = volumeInfoJSON.authors!!.size
-                    } catch (e: Exception) {
-                        authorNum = 0
-                    }
+                val numberOfBooks = arrayBooks?.size
 
-                    val authors = arrayOfNulls<String>(authorNum)
-                    for (j in 0 until authorNum) {
-                        authors[j] = volumeInfoJSON.authors!!.get(j).toString()
-                    }
-                    val book = Book(
-                        bookJSON.id!!,
-                        volumeInfoJSON.title!!,
-                        volumeInfoJSON.subtitle ?: ""
-                        ,
-                        authors,
-                        volumeInfoJSON.publisher ?: ""
-                        ,
-                        volumeInfoJSON.publishedDate ?: ""
-                        ,
-                        volumeInfoJSON.description ?: "",
-                        volumeInfoJSON.averageRating ?: 0.0,
-                        imageLinksJSON.thumbnail ?: ""
+                numberOfBooks?.let {
 
-                    )
-                    books.add(book)
+                    for (i in 0 until it) {
+                        val bookJSON = arrayBooks.get(i)
+                        val volumeInfoJSON = bookJSON.volumeInfo
+                        var imageLinksJSON: ImageLinks =
+                            ImageLinks()
+                        if (volumeInfoJSON!!.imageLinks != null) {
+                            imageLinksJSON = volumeInfoJSON!!.imageLinks!!
+                        }
+                        var authorNum: Int
+                        try {
+                            authorNum = volumeInfoJSON.authors!!.size
+                        } catch (e: Exception) {
+                            authorNum = 0
+                        }
+
+                        val authors = arrayOfNulls<String>(authorNum)
+                        for (j in 0 until authorNum) {
+                            authors[j] = volumeInfoJSON.authors!!.get(j).toString()
+                        }
+                        val book = Book(
+                            bookJSON.id!!,
+                            volumeInfoJSON.title!!,
+                            volumeInfoJSON.subtitle ?: ""
+                            ,
+                            authors,
+                            volumeInfoJSON.publisher ?: ""
+                            ,
+                            volumeInfoJSON.publishedDate ?: ""
+                            ,
+                            volumeInfoJSON.description ?: "",
+                            volumeInfoJSON.averageRating ?: 0.0,
+                            imageLinksJSON.thumbnail ?: ""
+
+                        )
+                        books.add(book)
+                    }
                 }
             } catch (e: JSONException) {
                 e.printStackTrace()

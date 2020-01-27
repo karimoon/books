@@ -22,15 +22,14 @@ class BoooksDaoTest : BooksDatabaseTest() {
     @Test(expected = SQLiteConstraintException::class)
     fun insertBooksWithSameIds() = runBlocking {
         insertBooksWithSameIds_throwSQLiteConstraintException_scope()
-
     }
 
 
     fun CoroutineScope.insertBooksWithDifferentIds_return_true_scope() {
-        // This coroutines `Job` is not shared with the test code
+
         launch {
-            insertBooksWithDifferentIds_return_true()      // executes eagerly when foo() is called due to runBlockingTest
-            println("karim instrumental test") // executes eagerly when foo() is called due to runBlockingTest
+            insertBooksWithDifferentIds_return_true()
+            println("karim instrumental test")
         }
     }
 
@@ -38,11 +37,9 @@ class BoooksDaoTest : BooksDatabaseTest() {
     fun CoroutineScope.insertBooksWithSameIds_throwSQLiteConstraintException_scope() {
         // This coroutines `Job` is not shared with the test code
         launch {
-            insertBooksWithSameIds_throwSQLiteConstraintException()      // executes eagerly when foo() is called due to runBlockingTest
+            insertBooksWithSameIds_throwSQLiteConstraintException()
         }
     }
-
-    suspend fun bar() {}
 
 
     @Throws(Exception::class)

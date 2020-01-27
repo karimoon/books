@@ -27,15 +27,9 @@ class MainActivity : BaseActivity(), ConnectivityReceiver.ConnectivityReceiverLi
     @Inject
     lateinit var providerFactory: ViewModelProvider.Factory
 
-    @Inject
-    lateinit var textex : String
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        Log.d(LOG_TAG, "providerString-->" + textex)
-        Log.d(LOG_TAG, "providerString-->" + providerFactory)
 
         viewModel = ViewModelProviders.of(this,providerFactory).get(MainViewModel::class.java)
 

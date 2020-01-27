@@ -3,6 +3,7 @@ package com.karim.booksapp.data.repository
 import android.Manifest
 import android.app.Application
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.ConnectivityManager
 import android.util.Log
@@ -30,13 +31,12 @@ import javax.inject.Inject
 
 class BookRepository
 @Inject
-constructor(val app :Application , val bookRetrofitService: BookRetrofitService,
-            val bookDao : BookDao
-) {
+constructor(val app :Application, val bookRetrofitService: BookRetrofitService,
+            val sharedPreferences: SharedPreferences
+            ) {
 
     val isNetworkAvailable = MutableLiveData<Boolean>()
     val bookData = MutableLiveData<List<Book>>()
-    val favoriteBooksData = MutableLiveData<List<Book>>()
 
     val queryMapSelected = MutableLiveData<HashMap<String,String>>()
 
@@ -89,18 +89,10 @@ constructor(val app :Application , val bookRetrofitService: BookRetrofitService,
         }
     }
 
-    @WorkerThread
-    suspend fun getFavoriteBooksFromDatabase(){
-        var books = bookDao.getAll()
-
-        books?.let {
-            favoriteBooksData.postValue(books)
-        }
-    }
 
     fun refreshDataFromWeb(mSortBy: String) {
 
-        queryMapSelected.value = queryMapSelected.value?: configSearchWithDefaultParams(SpUtil.getPreferenceString(app, "searchValue")!!)
+        queryMapSelected.value = queryMapSelected.value?: configSearchWithDefaultParams(SpUtil.getPreferenceString(sharedPreferences, "searchValue")!!)
 
         queryMapSelected.value?.let {
             it["orderBy"]= mSortBy
@@ -154,13 +146,6 @@ constructor(val app :Application , val bookRetrofitService: BookRetrofitService,
         val listType = Types.newParameterizedType(List::class.java, Book::class.java)
         val adapter: JsonAdapter<List<Book>> = moshi.adapter(listType)
         return adapter.fromJson(json) ?: emptyList()
-    }
-
-    fun getFavoriteBooks() {
-
-        CoroutineScope(Dispatchers.IO).launch {
-            getFavoriteBooksFromDatabase()
-        }
     }
 
 

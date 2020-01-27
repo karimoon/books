@@ -2,19 +2,23 @@ package com.karim.booksapp.ui.main
 
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import com.karim.booksapp.LOG_TAG
+import com.karim.booksapp.data.repository.BookDbRepository
 import com.karim.booksapp.data.repository.BookRepository
 import javax.inject.Inject
 
 class MainViewModel
 @Inject
-constructor(val app : Application, val bookRepository: BookRepository) : AndroidViewModel(app)
+constructor(val bookRepository: BookRepository , val bookDbRepository: BookDbRepository) : ViewModel()
 
 {
 
     val bookData = bookRepository.bookData
 
-    val favoriteBooksData = bookRepository.favoriteBooksData
+    val favoriteBooksData = bookDbRepository.favoriteBooksData
 
     val queryMapSelected = bookRepository.queryMapSelected
 
@@ -30,7 +34,7 @@ constructor(val app : Application, val bookRepository: BookRepository) : Android
     }
 
     fun getFavoriteBooks(){
-        bookRepository.getFavoriteBooks()
+        bookDbRepository.getFavoriteBooks()
     }
 
     fun searchBooksWithQuery(queryMap : HashMap<String,String>){
@@ -49,6 +53,5 @@ constructor(val app : Application, val bookRepository: BookRepository) : Android
     fun isNetworkAvailable(): Boolean {
         return bookRepository.networkAvalable()
     }
-
 
 }

@@ -1,6 +1,7 @@
 package com.karim.booksapp.ui.search
 
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -20,6 +21,7 @@ import com.karim.booksapp.ui.MainActivity
 
 import com.karim.booksapp.ui.main.MainViewModel
 import com.karim.booksapp.utilities.SpUtil
+import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_search.*
 import javax.inject.Inject
 
@@ -27,15 +29,17 @@ import javax.inject.Inject
 /**
  * A simple [Fragment] subclass.
  */
-class SearchFragment : Fragment() {
+class SearchFragment : DaggerFragment() {
 
     private lateinit var viewModel: MainViewModel
 
     private lateinit var navController: NavController
 
-//    @Inject
-//    lateinit var providerFactory : ViewModelProviderFactory
+    @Inject
+    lateinit var providerFactory : ViewModelProviderFactory
 
+    @Inject
+    lateinit var sharedPrefsEditor : SharedPreferences.Editor
 
     override fun onResume() {
         super.onResume()
@@ -55,7 +59,7 @@ class SearchFragment : Fragment() {
             requireActivity(), R.id.nav_host
         )
 
-        viewModel=ViewModelProviders.of(requireActivity()).get(MainViewModel::class.java)
+        viewModel=ViewModelProviders.of(requireActivity(),providerFactory).get(MainViewModel::class.java)
 
 
         if(!viewModel.isNetworkAvailable()){
@@ -90,7 +94,7 @@ class SearchFragment : Fragment() {
 
         viewModel.queryMapSelected.value = data
 
-        SpUtil.setPreferenceString(requireContext(), "searchValue", query)
+        SpUtil.setPreferenceString(sharedPrefsEditor, "searchValue", query)
 
         navController.navigate(R.id.action_searchFragment_to_bookListFragment)
 

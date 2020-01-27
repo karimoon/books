@@ -3,6 +3,7 @@ package com.karim.booksapp.ui.main
 import Injectable
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -40,6 +41,9 @@ class BookListFragment : DaggerFragment()  , BooksListRecyclerAdapter.BookItemLi
 
     @Inject
     lateinit var providerFactory: ViewModelProvider.Factory
+
+    @Inject
+    lateinit var sharedPrefsEditor : SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -198,7 +202,7 @@ class BookListFragment : DaggerFragment()  , BooksListRecyclerAdapter.BookItemLi
         }
 
         val data = query?.let {
-            SpUtil.setPreferenceString(requireContext(), "searchValue", it)
+            SpUtil.setPreferenceString(sharedPrefsEditor, "searchValue", it)
             viewModel.configSearchWithDefaultParams(it)
 
         }

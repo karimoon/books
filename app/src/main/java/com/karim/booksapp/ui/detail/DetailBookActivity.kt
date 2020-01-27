@@ -15,6 +15,7 @@ import com.karim.booksapp.R
 import com.karim.booksapp.data.database.BookDatabase
 import com.karim.booksapp.data.models.Book
 import com.karim.booksapp.data.recievers.ConnectivityReceiver
+import com.karim.booksapp.data.repository.BookDbRepository
 import com.karim.booksapp.databinding.ActivityDetailBookBinding
 import com.karim.booksapp.ui.BaseActivity
 import kotlinx.android.synthetic.main.favorite_buttons.*
@@ -23,6 +24,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
 
@@ -33,8 +35,9 @@ class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityRece
 
     val reciever = ConnectivityReceiver()
 
-    private val bookDao = BookDatabase.getDatabase(this)
-        .bookDao()
+
+    @Inject
+    lateinit var bookDbRepository : BookDbRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,7 +80,9 @@ class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityRece
 
         val isFavorite = isFavorite()
         if(isFavorite){
-            book?.let { bookDao.delete(it) }
+            book?.let {
+                bookDbRepository.deleteEntry(it)
+                }
         }
         updateFavoriteButtons()
     }
@@ -86,14 +91,18 @@ class DetailBookActivity : BaseActivity(), ConnectivityReceiver.ConnectivityRece
 
         val isFavorite = isFavorite()
         if(!isFavorite){
-            book?.let { bookDao.insertBook(it) }
+            book?.let {
+                bookDbRepository.insertEntry(it)
+            }
         }
         updateFavoriteButtons()
     }
 
      suspend fun isFavorite(): Boolean {
 
-         var  bookretrieved = book?.id?.let { bookDao.findBookById(it) }
+         var  bookretrieved = book?.id?.let {
+             bookDbRepository.findBookById(it)
+         }
          return bookretrieved != null
     }
 
