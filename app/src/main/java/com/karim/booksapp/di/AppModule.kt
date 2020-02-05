@@ -3,15 +3,16 @@
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.bumptech.glide.Glide
-import com.bumptech.glide.RequestManager
-import com.bumptech.glide.request.RequestOptions
-import com.karim.booksapp.API_URL
-import com.karim.booksapp.data.database.BookDao
-import com.karim.booksapp.data.database.BookDatabase
-import com.karim.booksapp.data.repository.BookDbRepository
-import com.karim.booksapp.di.ui.main.MainScope
-import com.karim.booksapp.utilities.SpUtil.Companion.PREF_NAME
+import com.karim.booksapp.utils.API_URL
+import com.karim.booksapp.room.BookDao
+import com.karim.booksapp.room.BookDatabase
+import com.karim.booksapp.network.helpers.NetworkHelperWrapper
+import com.karim.booksapp.network.helpers.NetworkHelperWrapperImpl
+import com.karim.booksapp.screens.main.repositories.BookDbRepository
+import com.karim.booksapp.screens.main.repositories.BookDbRepositoryImpl
+import com.karim.booksapp.repositories.PermissionRepository
+import com.karim.booksapp.repositories.PermissionRepositoryImpl
+import com.karim.booksapp.utils.SpUtil.Companion.PREF_NAME
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -64,8 +65,26 @@ class AppModule{
     fun provideBookDbRepository(
         bookDao : BookDao
     ): BookDbRepository {
-        return BookDbRepository(
+        return BookDbRepositoryImpl(
             bookDao
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideNetworkHelperWrapper(application: Application
+    ): NetworkHelperWrapper {
+        return NetworkHelperWrapperImpl(
+            application
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun providePermissionRepository(application: Application
+    ): PermissionRepository {
+        return PermissionRepositoryImpl(
+            application
         )
     }
 

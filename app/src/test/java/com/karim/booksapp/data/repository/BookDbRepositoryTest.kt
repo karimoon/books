@@ -2,33 +2,27 @@
 
 package com.karim.booksapp.data.repository
 
-import androidx.lifecycle.MutableLiveData
-import com.karim.booksapp.data.models.Book
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.whenever
-import org.junit.Test
-
-import org.junit.Assert.*
-
 class BookDbRepositoryTest {
 
-    @Test
-    fun findBookById_return_true(){
+    /*@Test
+    fun getFavoriteBooks_return_list_of_books(){
         //Arrange
         val book1 = Book()
         book1.id = "1"
 
-        var bookDbRepository : BookDbRepository = mock()
+        val bookDao = mock<BookDao>()
+        var bookDbRepository : BookDbRepositoryImpl = BookDbRepositoryImpl(bookDao)
 
         val list =  arrayListOf(Book("1", "", "",emptyArray<String?>(), "", "","", 0.0, ""))
 
-        whenever(bookDbRepository.getFavoriteBooks())
-            .thenReturn(MutableLiveData(list))
+        runBlocking {
+            `when`(bookDao.getAll()).thenReturn(list)
+        }
+        val books = bookDbRepository.getFavoriteBooks()
 
-        val book = bookDbRepository.getFavoriteBooks()?.value?.get(0)
+        assertNotNull(books)
+        //tester si la liste retourner par le repository correspond a la list de mock
+        //assertEquals(book1.toString(), book.toString())
 
-        assertNotNull(book)
-        assertEquals(book1.toString(), book.toString())
-
-    }
+    }*/
 }

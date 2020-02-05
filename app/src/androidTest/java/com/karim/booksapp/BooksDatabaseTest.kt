@@ -1,8 +1,8 @@
 package com.karim.booksapp
 
 import androidx.room.Room
-import com.karim.booksapp.data.database.BookDao
-import com.karim.booksapp.data.database.BookDatabase
+import com.karim.booksapp.room.BookDao
+import com.karim.booksapp.room.BookDatabase
 import org.junit.After
 import org.junit.Before
 

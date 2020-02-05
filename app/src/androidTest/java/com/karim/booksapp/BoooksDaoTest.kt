@@ -1,7 +1,7 @@
 package com.karim.booksapp
 
 import android.database.sqlite.SQLiteConstraintException
-import com.karim.booksapp.data.models.Book
+import com.karim.booksapp.models.Book
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -13,37 +13,9 @@ import org.junit.Test
 class BoooksDaoTest : BooksDatabaseTest() {
 
 
-
     @Test
-    fun insertBooksWithDifferentIds() = runBlocking {
-        insertBooksWithDifferentIds_return_true_scope()
-    }
-
-    @Test(expected = SQLiteConstraintException::class)
-    fun insertBooksWithSameIds() = runBlocking {
-        insertBooksWithSameIds_throwSQLiteConstraintException_scope()
-    }
-
-
-    fun CoroutineScope.insertBooksWithDifferentIds_return_true_scope() {
-
-        launch {
-            insertBooksWithDifferentIds_return_true()
-            println("karim instrumental test")
-        }
-    }
-
-
-    fun CoroutineScope.insertBooksWithSameIds_throwSQLiteConstraintException_scope() {
-        // This coroutines `Job` is not shared with the test code
-        launch {
-            insertBooksWithSameIds_throwSQLiteConstraintException()
-        }
-    }
-
-
     @Throws(Exception::class)
-    suspend fun insertBooksWithDifferentIds_return_true() {
+    fun insertBooksWithDifferentIds_return_true() {
 
         //Arrange
         val book1 = Book()
@@ -54,21 +26,25 @@ class BoooksDaoTest : BooksDatabaseTest() {
         book2.id = "2"
         book3.id = "3"
 
+        runBlocking {
 
-        //Act
-        getBookDao().insertBook(book1)
-        getBookDao().insertBook(book2)
-        getBookDao().insertBook(book3)
-        val books = getBookDao().getAll()
-        println(books.toString())
+            //Act
+            getBookDao().insertBook(book1)
+            getBookDao().insertBook(book2)
+            getBookDao().insertBook(book3)
+            val books = getBookDao().getAll()
+            println(books.toString())
 
-        //Assert
-        assertEquals(books.size, 3)
+            //Assert
+            assertEquals(books.size, 3)
+        }
+
     }
 
 
+    @Test(expected = SQLiteConstraintException::class)
     @Throws(Exception::class)
-    suspend fun insertBooksWithSameIds_throwSQLiteConstraintException(){
+    fun insertBooksWithSameIds_throwSQLiteConstraintException(){
 
         //Arrange
         val book1 = Book()
@@ -78,8 +54,13 @@ class BoooksDaoTest : BooksDatabaseTest() {
         book2.id = "1"
 
         //Act
-        getBookDao().insertBook(book1)
-        getBookDao().insertBook(book2)
+
+        runBlocking {
+
+            getBookDao().insertBook(book1)
+            getBookDao().insertBook(book2)
+        }
+
 
     }
 

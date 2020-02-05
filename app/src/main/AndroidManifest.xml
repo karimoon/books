@@ -16,16 +16,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".screens.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.detail.DetailBookActivity" /> <!-- The below code is for android OS version below N -->
+        <activity android:name=".screens.detail.DetailBookActivity" /> <!-- The below code is for android OS version below N -->
         <receiver
-            android:name=".data.recievers.ConnectivityReceiver"
+            android:name="com.karim.booksapp.recievers.ConnectivityReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
